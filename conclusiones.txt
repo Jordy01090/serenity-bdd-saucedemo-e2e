@@ -1,0 +1,34 @@
+CONCLUSIONES DEL EJERCICIO E2E – SAUCEDEMO (AUTODOWNLOAD)
+
+Durante la automatización del flujo End-to-End con Serenity BDD, Screenplay y Cucumber en Java,
+se validó de forma integral el proceso de compra en SauceDemo, desde el login hasta la confirmación final de la orden.
+
+✔️ RESULTADOS CLAVE
+- La ejecución se realizó correctamente en Google Chrome (estable).
+- Gracias a `autodownload = true`, Serenity (vía Selenium) administró automáticamente el ChromeDriver
+  compatible con la versión del navegador en cada equipo, sin rutas locales manuales.
+- Se generaron reportes HTML navegables con detalle paso a paso y evidencia visual.
+- El flujo cumplió su objetivo funcional: completar una compra y visualizar el mensaje de confirmación.
+
+🧩 HALLAZGOS / OBSERVACIONES
+- El test detectó una diferencia exacta en el texto final:
+  - Esperado (documento original): `THANK YOU FOR YOUR ORDER`
+  - Obtenido (UI actual): `Thank you for your order!`
+  Esto evidencia que las pruebas verifican con precisión los elementos de UI y son sensibles a cambios de copy.
+
+💡 APRENDIZAJES TÉCNICOS
+- Alinear versiones entre Serenity y Selenium evita errores de carga (`NoClassDefFoundError`).
+- `autodownload = true` simplifica la portabilidad del proyecto (menos dependencia de rutas locales).
+- El patrón Screenplay mejora la mantenibilidad: separa selectores (`ui/`), acciones (`tasks/`)
+  y validaciones (`questions/`), lo que facilita la evolución del set de pruebas.
+
+🧠 CONCLUSIÓN FINAL
+El proyecto alcanzó los objetivos:
+- Automatización E2E estable y reproducible.
+- Validaciones claras y reportes de calidad profesional.
+- Portabilidad para que diferentes desarrolladores/QA puedan clonar, instalar y ejecutar en su máquina con pasos mínimos.
+
+Se recomienda, como evolución, incorporar:
+- **Tags** (`@smoke`, `@e2e`, `@regression`) y matrices de datos (Scenario Outline) para ampliar cobertura.
+- Validaciones adicionales (precios, filtros, errores de login).
+- Pipeline CI/CD (GitHub Actions) para ejecuciones automáticas en PRs y ramas principales.

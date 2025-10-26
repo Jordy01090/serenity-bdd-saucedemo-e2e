@@ -1,0 +1,12 @@
+starter\runners\PurchaseCucumberRunner.class
+starter\stepdefinitions\Hooks.class
+starter\tasks\Login.class
+starter\ui\InventoryPage.class
+starter\tasks\Checkout.class
+starter\ui\LoginPage.class
+starter\tasks\AddTwoProducts.class
+starter\tasks\OpenThe.class
+starter\questions\OrderMessage.class
+starter\stepdefinitions\PurchaseSteps.class
+starter\ui\CheckoutPage.class
+starter\ui\CartPage.class

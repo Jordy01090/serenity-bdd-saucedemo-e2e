@@ -1,0 +1,126 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>qa.jordy</groupId>
+  <artifactId>saucedemo-serenity-screenplay-cucumber</artifactId>
+  <version>1.0.0</version>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <serenity.version>3.6.23</serenity.version>
+    <selenium.version>4.19.1</selenium.version>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+        <!-- Fuerza a todos los módulos de Selenium a usar la misma versión -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-bom</artifactId>
+            <version>4.19.1</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+      <!-- Serenity Core + JUnit4 -->
+      <dependency>
+          <groupId>net.serenity-bdd</groupId>
+          <artifactId>serenity-core</artifactId>
+          <version>${serenity.version}</version>
+      </dependency>
+
+      <dependency>
+          <groupId>net.serenity-bdd</groupId>
+          <artifactId>serenity-junit</artifactId>
+          <version>${serenity.version}</version>
+      </dependency>
+
+      <!-- Screenplay + WebDriver -->
+      <dependency>
+          <groupId>net.serenity-bdd</groupId>
+          <artifactId>serenity-screenplay</artifactId>
+          <version>${serenity.version}</version>
+      </dependency>
+
+      <dependency>
+          <groupId>net.serenity-bdd</groupId>
+          <artifactId>serenity-screenplay-webdriver</artifactId>
+          <version>${serenity.version}</version>
+      </dependency>
+
+      <!-- Cucumber + Serenity integration -->
+      <dependency>
+          <groupId>net.serenity-bdd</groupId>
+          <artifactId>serenity-cucumber</artifactId>
+          <version>${serenity.version}</version>
+      </dependency>
+
+      <dependency>
+          <groupId>io.cucumber</groupId>
+          <artifactId>cucumber-java</artifactId>
+          <version>6.11.0</version>
+      </dependency>
+
+      <!-- Selenium -->
+      <dependency>
+          <groupId>org.seleniumhq.selenium</groupId>
+          <artifactId>selenium-java</artifactId>
+          <version>${selenium.version}</version>
+      </dependency>
+
+      <!-- WebDriverManager -->
+      <dependency>
+          <groupId>io.github.bonigarcia</groupId>
+          <artifactId>webdrivermanager</artifactId>
+          <version>5.9.1</version>
+      </dependency>
+
+      <!-- AssertJ (opcional) -->
+      <dependency>
+          <groupId>org.assertj</groupId>
+          <artifactId>assertj-core</artifactId>
+          <version>3.25.3</version>
+          <scope>test</scope>
+      </dependency>
+      <!--
+      <dependency>
+          <groupId>org.seleniumhq.selenium</groupId>
+          <artifactId>htmlunit3-driver</artifactId>
+          <version>4.19.1</version>
+      </dependency>-->
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>net.serenity-bdd.maven.plugins</groupId>
+        <artifactId>serenity-maven-plugin</artifactId>
+        <version>${serenity.version}</version>
+        <configuration>
+          <reports>single-page</reports>
+        </configuration>
+        <executions>
+          <execution>
+            <id>serenity-reports</id>
+            <phase>post-integration-test</phase>
+            <goals><goal>aggregate</goal></goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.2.5</version>
+        <configuration>
+          <includes>
+            <include>**/*Runner.java</include>
+          </includes>
+          <useModulePath>false</useModulePath>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
