@@ -24,15 +24,15 @@ Automatización E2E del flujo de compra en [SauceDemo](https://www.saucedemo.com
 
 ## Arquitectura y Stack
 
-- **Lenguaje:** Java 17+  
-- **Build:** Maven 3.8+  
+- **Lenguaje:** Java 17.0.12  
+- **Build:** Maven 3.9.11  
 - **Framework BDD:** Serenity BDD (Screenplay) + Cucumber  
 - **Driver Web:** Selenium 4 con autodetección y descarga automática de ChromeDriver  
 - **Navegador por defecto:** Google Chrome (estable)  
 - **Asserts:** AssertJ / Hamcrest (vía Serenity)  
 
 Versiones de referencia probadas y alineadas:
-- `serenity-core` / `serenity-screenplay` / `serenity-cucumber6`: **3.7.1**
+- `serenity-core` / `serenity-screenplay` / `serenity-cucumber`: **3.6.23**
 - `selenium-java`: **4.19.1**
 
 > El proyecto está configurado para descargar automáticamente el **ChromeDriver** compatible con la versión de Chrome instalada en el equipo del usuario (no se requiere path manual).
@@ -70,7 +70,7 @@ Versiones de referencia probadas y alineadas:
    java -version
    ```
 
-2. **Maven 3.8+**  
+2. **Maven 3.9.11**  
    Verifica con:
    ```bash
    mvn -version
