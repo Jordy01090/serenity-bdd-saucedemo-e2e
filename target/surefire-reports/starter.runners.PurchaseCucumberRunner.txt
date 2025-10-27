@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: starter.runners.PurchaseCucumberRunner
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 14.98 s <<< FAILURE! -- in starter.runners.PurchaseCucumberRunner
-E2E de compra en Saucedemo.Usuario completa una compra exitosa -- Time elapsed: 7.827 s <<< FAILURE!
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 15.40 s <<< FAILURE! -- in starter.runners.PurchaseCucumberRunner
+E2E de compra en Saucedemo.Usuario completa una compra exitosa -- Time elapsed: 8.145 s <<< FAILURE!
 java.lang.AssertionError: 
 
 Expected: "THANK YOU FOR YOUR ORDER"
@@ -11,5 +11,5 @@ Expected: "THANK YOU FOR YOUR ORDER"
 	at net.serenitybdd.screenplay.ErrorTally.reportAnyErrors(ErrorTally.java:32)
 	at net.serenitybdd.screenplay.Actor.should(Actor.java:395)
 	at starter.stepdefinitions.PurchaseSteps.veElMensajeDeConfirmacionDeLaOrden(PurchaseSteps.java:51)
-	at ✽.ve el mensaje de confirmación de la orden(file:///C:/Users/USER/Documents/saucedemo-serenity-screenplay-cucumber/src/test/resources/features/purchase/purchase_flow.feature:8)
+	at ✽.ve el mensaje de confirmación de la orden(file:///C:/Users/USER/Downloads/PRUEBAS/selenium/serenity-bdd-saucedemo-e2e/src/test/resources/features/purchase/purchase_flow.feature:8)
 
